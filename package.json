@@ -1,0 +1,22 @@
+{
+  "name": "deskctl",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "bin": "bin/index.js",
+  "dependencies": {
+    "meow": "^9.0.0",
+    "usb": "^1.7.0"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
+  "scripts": {
+    "format": "prettier --write .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
