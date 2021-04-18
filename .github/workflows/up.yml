@@ -2,7 +2,7 @@ name: up
 on:
   schedule:
     # At 05:00 (KST 14:00) on every day-of-week from Monday through Friday
-    - cron: '0 5 * * 1-5'
+    - cron: "0 5 * * 1-5"
 
 jobs:
   up:
@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
       - run: |
           npm i -g deskctl
           deskctl 100 -t %

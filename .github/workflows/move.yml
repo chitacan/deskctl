@@ -3,13 +3,12 @@ on:
   workflow_dispatch:
     inputs:
       value:
-        description: ''
+        description: "value to move"
         required: true
-        default: ''
       type:
-        description: ''
+        description: "type of value (cm, %, raw)"
         required: true
-        default: '%'
+        default: "%"
 
 jobs:
   move:
@@ -17,7 +16,7 @@ jobs:
     steps:
       - uses: actions/setup-node@v1
         with:
-          node-version: '14'
+          node-version: "14"
       - run: |
           npm i -g deskctl
           deskctl ${{ github.event.inputs.value }} -t ${{ github.event.inputs.type }}
