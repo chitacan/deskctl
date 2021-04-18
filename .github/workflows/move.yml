@@ -1,0 +1,23 @@
+name: move
+on:
+  workflow_dispatch:
+    inputs:
+      value:
+        description: ''
+        required: true
+        default: ''
+      type:
+        description: ''
+        required: true
+        default: '%'
+
+jobs:
+  move:
+    runs-on: [self-hosted, cmbp-16]
+    steps:
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '14'
+      - run: |
+          npm i -g deskctl
+          deskctl ${{ github.event.inputs.value }} -t ${{ github.event.inputs.type }}
