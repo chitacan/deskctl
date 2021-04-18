@@ -14,3 +14,13 @@ jobs:
       - run: |
           npm i -g deskctl
           deskctl 10 -t %
+      - id: current
+        run:
+          echo "::set-output name=DESK_VALUE::$(deskctl -s -t %)"
+      - run: |
+          curl -X "PATCH" "https://api.github.com/repos/chitacan/deskctl/issues/1" \
+               -H 'Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}' \
+               -H 'Content-Type: application/json; charset=utf-8' \
+               -d $'{
+            "body": "```\\n{\\n  \\"height\\": \\"${{ steps.current.outputs.DESK_VALUE }}\\"\\n}\\n```"
+          }'
