@@ -40,7 +40,14 @@ const {
 if (type !== "cm" && type !== "%" && type !== "raw") {
   console.error(`type ${type} is not supported`);
   process.exit(1);
-} else if (status) {
+}
+
+if (!+value) {
+  console.error(`value must be a number`);
+  process.exit(1);
+}
+
+if (status) {
   getStatus()
     .then(({ ref1 }) => {
       if (type === "raw") {
