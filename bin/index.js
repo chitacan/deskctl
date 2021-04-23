@@ -42,7 +42,7 @@ if (type !== "cm" && type !== "%" && type !== "raw") {
   process.exit(1);
 }
 
-if (!+value) {
+if (!status && !+value) {
   console.error(`value must be a number`);
   process.exit(1);
 }
