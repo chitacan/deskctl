@@ -14,7 +14,7 @@ jobs:
           node-version: "14"
       - run: |
           npm i -g deskctl
-          deskctl 10 -t %
+          deskctl 15 -t %
       - id: current
         run:
           echo "::set-output name=DESK_VALUE::$(deskctl -s -t %)"
