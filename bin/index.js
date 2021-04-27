@@ -59,9 +59,15 @@ if (status) {
       }
       process.exit(0);
     })
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
 } else {
   moveTo({ value: +value, type })
     .then(() => process.exit(0))
-    .catch((err) => console.error(err));
+    .catch((err) => {
+      console.error(err)
+      process.exit(1);
+    });
 }
