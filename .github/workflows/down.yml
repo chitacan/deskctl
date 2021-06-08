@@ -2,8 +2,8 @@ name: down
 on:
   schedule:
     # At 06:00, 09:00 (KST 15:00, 18:00) on every day-of-week from Monday through Friday
-    - cron: "0 6 * * 1-5"
-    - cron: "0 9 * * 1-5"
+    # - cron: "0 6 * * 1-5"
+    # - cron: "0 9 * * 1-5"
 
 jobs:
   down:
